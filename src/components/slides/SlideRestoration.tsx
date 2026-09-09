@@ -191,15 +191,12 @@ export function SlideRestoration() {
                   <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-amber-500 text-slate-950 tracking-wider uppercase">
                     INFRAESTRUCTURA CLAVE
                   </span>
-                  <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-slate-900/80 text-amber-400 border border-amber-400/30 backdrop-blur-md">
-                    LÍNEA EXPRESA 4.79 KM
-                  </span>
                 </div>
                 <h4 className="text-sm sm:text-base font-bold text-white leading-snug drop-shadow-md">
-                  Sistema Teleférico Palo Verde - Filas de Mariche
+                  Sistema Teleférico
                 </h4>
                 <p className="text-xs text-slate-300 font-mono mt-0.5 drop-shadow">
-                  Estación Motriz & Trazado Aéreo Directo
+                  Trazado Aéreo Directo
                 </p>
               </div>
             </div>

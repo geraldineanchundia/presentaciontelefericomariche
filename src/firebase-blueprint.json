@@ -1,0 +1,125 @@
+{
+  "entities": {
+    "TowerObservation": {
+      "title": "Tower Observation",
+      "description": "Technical observation and diagnostic for a specific cable car tower.",
+      "type": "object",
+      "properties": {
+        "observation": {
+          "type": "string",
+          "maxLength": 2000,
+          "description": "The technical diagnostic or observation text."
+        },
+        "towerCode": {
+          "type": "string",
+          "pattern": "^P[0-9]{2}$",
+          "description": "The unique code of the tower (e.g., P01)."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the last update."
+        },
+        "updatedBy": {
+          "type": "string",
+          "description": "UID of the user who made the update."
+        }
+      },
+      "required": ["observation", "towerCode", "updatedAt", "updatedBy"]
+    },
+    "ComponentAnalysis": {
+      "title": "Component Analysis",
+      "description": "Technical analysis and attached evidence for an electromecánical component.",
+      "type": "object",
+      "properties": {
+        "componentId": {
+          "type": "string",
+          "description": "The unique ID of the component."
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of base64 images or URLs attached to the component."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the last update."
+        },
+        "updatedBy": {
+          "type": "string",
+          "description": "UID of the user who made the update."
+        }
+      },
+      "required": ["componentId", "images", "updatedAt", "updatedBy"]
+    },
+    "GalleryPhoto": {
+      "title": "Gallery Photo",
+      "description": "Customized gallery photo written by users.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique photo ID."
+        },
+        "imageUrl": {
+          "type": "string",
+          "maxLength": 1048576,
+          "description": "The data URI or URL of the image."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the update."
+        }
+      },
+      "required": ["id", "imageUrl", "updatedAt"]
+    },
+    "Catalog": {
+      "title": "Catalog PDF",
+      "description": "Base64 representation of the General Trade PDF catalog.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "pdfData": {
+          "type": "string",
+          "maxLength": 1048576,
+          "description": "Base64 encoded PDF."
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileSize": {
+          "type": "number"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["id", "pdfData", "fileName", "fileSize", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "towerObservations/{towerCode}": {
+      "schema": "TowerObservation",
+      "description": "Collection of observations indexed by tower code."
+    },
+    "componentAnalysis/{componentId}": {
+      "schema": "ComponentAnalysis",
+      "description": "Collection of technical analysis and images for components."
+    },
+    "galleryPhotos/{photoId}": {
+      "schema": "GalleryPhoto",
+      "description": "Collection of customized gallery photos."
+    },
+    "catalogs/{catalogId}": {
+      "schema": "Catalog",
+      "description": "Collection of General Trade catalogs."
+    }
+  }
+}

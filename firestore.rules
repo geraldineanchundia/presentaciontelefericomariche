@@ -1,0 +1,114 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Master Gate / Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^P[0-9]{2}$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // 2. Validation Blueprints
+    function isValidTowerObservation(data) {
+      return data.keys().hasAll(['observation', 'towerCode', 'updatedAt', 'updatedBy'])
+        && data.keys().size() == 4
+        && data.observation is string
+        && data.observation.size() <= 2000
+        && data.towerCode is string
+        && data.towerCode.matches('^P[0-9]{2}$')
+        && data.updatedBy == request.auth.uid
+        && data.updatedAt == request.time;
+    }
+
+    // Collection Rules
+    match /towerObservations/{towerCode} {
+      // 3. Path Variable Hardening
+      allow get: if isSignedIn() && isValidId(towerCode);
+      allow list: if isSignedIn(); // No path variable hardening on list
+
+      allow create: if isSignedIn() 
+        && isValidId(towerCode)
+        && isValidTowerObservation(incoming())
+        && towerCode == incoming().towerCode;
+
+      allow update: if isSignedIn()
+        && isValidId(towerCode)
+        && isValidTowerObservation(incoming())
+        && towerCode == incoming().towerCode
+        && (
+          // Action: Edit Observation
+          incoming().diff(existing()).affectedKeys().hasOnly(['observation', 'updatedAt', 'updatedBy'])
+        );
+
+      allow delete: if false;
+    }
+
+    // Component Analysis Rules
+    function isValidComponentAnalysis(data) {
+      return data.keys().hasAll(['componentId', 'images', 'updatedAt', 'updatedBy'])
+        && data.keys().size() == 4
+        && data.componentId is string
+        && data.images is list
+        && data.updatedBy is string
+        && data.updatedAt == request.time;
+    }
+
+    match /componentAnalysis/{componentId} {
+      allow read: if true;
+      allow write: if isValidComponentAnalysis(incoming())
+        && componentId == incoming().componentId;
+      
+      allow delete: if false;
+    }
+
+    // Gallery Photos Rules
+    function isValidGalleryPhoto(data) {
+      return data.keys().hasAll(['id', 'imageUrl', 'updatedAt'])
+        && data.keys().size() == 3
+        && data.id is string
+        && data.imageUrl is string
+        && data.imageUrl.size() <= 1048576
+        && data.updatedAt == request.time;
+    }
+
+    match /galleryPhotos/{photoId} {
+      allow read: if true;
+      allow create, update: if isValidGalleryPhoto(incoming())
+        && photoId == incoming().id;
+      allow delete: if false;
+    }
+
+    // Catalogs Rules
+    function isValidCatalog(data) {
+      return data.keys().hasAll(['id', 'pdfData', 'fileName', 'fileSize', 'updatedAt'])
+        && data.keys().size() == 5
+        && data.id is string
+        && data.pdfData is string
+        && data.pdfData.size() <= 1048576
+        && data.fileName is string
+        && data.fileSize is number
+        && data.updatedAt == request.time;
+    }
+
+    match /catalogs/{catalogId} {
+      allow read: if true;
+      allow write: if isValidCatalog(incoming())
+        && catalogId == incoming().id;
+    }
+  }
+}

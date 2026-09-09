@@ -1,0 +1,6 @@
+{
+  "name": "Teleférico Palo Verde - Mariche | General Trade",
+  "description": "Presentación ejecutiva e interactiva sobre la ingeniería, restauración operativa e impacto socioeconómico del Metrocable Palo Verde - Mariche por General Trade.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

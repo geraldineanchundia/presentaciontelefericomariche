@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 92" width="100%" height="100%" fill="none">
+  <!-- Brand Typography: Geometric Sans -->
+  <g id="brand-text">
+    <!-- "General" in Navy -->
+    <text 
+      x="4" 
+      y="40" 
+      font-family="'Outfit', 'Century Gothic', 'Plus Jakarta Sans', system-ui, sans-serif" 
+      font-size="43" 
+      font-weight="500" 
+      letter-spacing="-0.5" 
+      fill="#0A194F"
+    >
+      General
+    </text>
+    
+    <!-- "Trade" in Slate Silver -->
+    <text 
+      x="44" 
+      y="78" 
+      font-family="'Outfit', 'Century Gothic', 'Plus Jakarta Sans', system-ui, sans-serif" 
+      font-size="41" 
+      font-weight="300" 
+      letter-spacing="-0.5" 
+      fill="#8A96AC"
+    >
+      Trade
+    </text>
+  </g>
+
+  <!-- Brand Emblem (Orbit Swoosh + Dual-tone Delta Arrow) -->
+  <g id="brand-symbol">
+    <!-- Orbit Swoosh -->
+    <path 
+      d="M 196 10
+         C 174 13, 160 26, 160 46
+         C 160 66, 178 86, 218 90
+         C 252 93, 278 84, 288 72
+         C 287 73, 276 80, 248 83
+         C 208 87, 168 74, 166 46
+         C 164 28, 178 16, 198 10 Z" 
+      fill="#0A194F"
+    />
+
+    <!-- Dual-tone Directional Arrow -->
+    <!-- Top/Right Facet (Navy) -->
+    <polygon 
+      points="296,18 248,42 242,52" 
+      fill="#0A194F" 
+    />
+    
+    <!-- Bottom/Left Facet (Slate Blue) -->
+    <polygon 
+      points="296,18 242,52 225,66" 
+      fill="#8A96AC" 
+    />
+  </g>
+</svg>

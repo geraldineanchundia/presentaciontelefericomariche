@@ -61,20 +61,7 @@ export function SlideHero({ onStartPresentation }: SlideHeroProps) {
           Ingeniería, Reactivación y Sostenibilidad
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap items-center gap-3.5 mb-10">
-          <button
-            id="hero-explore-3d-btn"
-            onClick={() => {
-              playClickSound();
-              onStartPresentation();
-            }}
-            className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white font-bold text-sm tracking-wide shadow-xl shadow-blue-500/25 transition-all transform hover:-translate-y-0.5 cursor-pointer"
-          >
-            <span>Iniciar Presentación & Simulador 3D</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
+
 
         {/* Key System Metrics Grid */}
         <div className={`grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 pt-6 border-t ${

@@ -246,22 +246,6 @@ export function SlideMap3D() {
           >
             Blueprint CAD
           </button>
-          <button
-            onClick={() => setViewStyle('satellite')}
-            className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
-              viewStyle === 'satellite' ? 'bg-red-300 text-slate-950 font-bold' : isLight ? 'text-slate-600 hover:text-slate-900' : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Topográfico
-          </button>
-          <button
-            onClick={() => setViewStyle('thermal')}
-            className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
-              viewStyle === 'thermal' ? 'bg-rose-500 text-white font-bold' : isLight ? 'text-slate-600 hover:text-slate-900' : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Inspección NDT
-          </button>
         </div>
       </div>
 

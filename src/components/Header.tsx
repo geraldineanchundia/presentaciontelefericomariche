@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { 
   Cable, 
-  Layers, 
   Presentation, 
   FileText, 
   Activity,
@@ -102,48 +101,15 @@ export function Header({
             </span>
           </button>
 
-          {/* Mode Switcher */}
-          <div className={`flex items-center p-1 rounded-xl border transition-colors ${
-            isLight ? 'bg-slate-100 border-slate-200' : 'bg-slate-800/60 border-slate-700/60'
+          {/* Slide Progress Indicator Badge */}
+          <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border transition-colors ${
+            isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-slate-800/60 border-slate-700/60 text-slate-300'
           }`}>
-            <button
-              id="mode-presentation-btn"
-              onClick={() => {
-                playClickSound();
-                setViewMode('presentation');
-              }}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-                viewMode === 'presentation'
-                  ? 'bg-blue-700 text-white font-bold shadow-sm'
-                  : isLight ? 'text-slate-600 hover:text-slate-900' : 'text-slate-400 hover:text-slate-200'
-              }`}
-              title="Modo Presentación Diapositiva a Diapositiva"
-            >
-              <Presentation className="w-3.5 h-3.5" />
-              <span className="hidden md:inline text-white">Presentación</span>
-              {viewMode === 'presentation' && (
-                <span className="px-1.5 py-0.2 text-[10px] rounded bg-white/20 text-white font-bold ml-1">
-                  {currentSlideNum}/{totalSlides}
-                </span>
-              )}
-            </button>
-
-            <button
-              id="mode-dashboard-btn"
-              onClick={() => {
-                playClickSound();
-                setViewMode('dashboard');
-              }}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-                viewMode === 'dashboard'
-                  ? 'bg-blue-700 text-white font-bold shadow-sm'
-                  : isLight ? 'text-slate-600 hover:text-slate-900' : 'text-slate-400 hover:text-slate-200'
-              }`}
-              title="Modo Centro de Control & Módulos Completos"
-            >
-              <Layers className="w-3.5 h-3.5" />
-              <span className="hidden md:inline text-white">Centro de Control</span>
-            </button>
+            <Presentation className="w-3.5 h-3.5 text-blue-500" />
+            <span className="hidden sm:inline font-semibold">Presentación</span>
+            <span className="px-1.5 py-0.5 text-[10px] rounded bg-blue-600 text-white font-bold ml-1">
+              {currentSlideNum}/{totalSlides}
+            </span>
           </div>
         </div>
 

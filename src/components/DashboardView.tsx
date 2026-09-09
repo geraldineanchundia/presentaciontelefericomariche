@@ -40,27 +40,6 @@ export function DashboardView({ onSwitchToPresentation }: DashboardViewProps) {
 
   return (
     <div className="space-y-6 pb-12">
-      
-      {/* Executive Command Header */}
-      <div className={`p-6 rounded-2xl border flex flex-col md:flex-row items-start md:items-center justify-between gap-4 backdrop-blur-xl transition-colors ${
-        isLight
-          ? 'bg-gradient-to-r from-white via-slate-50/80 to-white border-slate-200 text-slate-900 shadow-md'
-          : 'bg-gradient-to-r from-slate-900/60 via-slate-950/60 to-slate-900/60 border-slate-700/50 text-slate-100'
-      }`}>
-        <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-blue-700 font-bold mb-1">
-            <span className="w-2 h-2 rounded-full bg-blue-700 animate-ping" />
-            <span>CENTRO INTEGRAL DE CONTROL & ANÁLISIS TÉCNICO</span>
-          </div>
-          <h1 className={`text-xl sm:text-2xl font-black ${isLight ? 'text-slate-900' : 'text-white'}`}>
-            Expediente Operativo: Metrocable Palo Verde - Mariche
-          </h1>
-          <p className={`text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-            Acceso libre a todos los módulos interactivos, telemetría de simulación, catálogo de componentes y propuesta de gestión integral por <strong className={isLight ? 'text-slate-950' : 'text-white'}>General Trade</strong>.
-          </p>
-        </div>
-      </div>
-
       {/* Navigation Chips Bar */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin">
         {navItems.map((item) => {

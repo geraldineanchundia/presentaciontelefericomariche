@@ -109,41 +109,235 @@ export function SlideRestoration() {
   return (
     <div className="space-y-4">
       
-      {/* Header */}
-      <div className={`p-5 rounded-2xl border backdrop-blur-xl transition-colors ${
-        isLight ? 'bg-white/80 border-slate-200 text-slate-900 shadow-sm' : 'bg-slate-900/50 border-slate-700/50 text-slate-100'
+      {/* Header Amplificado - Plan de Movilidad */}
+      <div className={`p-6 sm:p-8 lg:p-10 rounded-3xl border backdrop-blur-xl transition-all shadow-lg ${
+        isLight 
+          ? 'bg-white/95 border-slate-300/80 text-slate-900 shadow-slate-200/50 ring-1 ring-slate-900/5' 
+          : 'bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-950/90 border-slate-700/70 text-slate-100 shadow-black/40 ring-1 ring-white/10'
       }`}>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-          <div className="md:col-span-8 space-y-2">
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-500 border border-amber-500/30">
-                PLAN DE MOVILIDAD
-              </span>
-              <div className={`text-xs font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                Eje Conector: <strong className="text-amber-500">Palo Verde ⇋ Filas de Mariche</strong>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
+          
+          {/* Left / Main Text Column */}
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              {/* Badges */}
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-amber-500/20 text-amber-500 border border-amber-500/40 tracking-wide">
+                  <MapPin className="w-3.5 h-3.5 text-amber-500" />
+                  PLAN DE MOVILIDAD
+                </div>
+                <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border ${
+                  isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-slate-800/60 border-slate-700 text-slate-300'
+                }`}>
+                  <span>Eje Conector:</span>
+                  <strong className="text-amber-500 font-bold">Palo Verde ⇋ Filas de Mariche</strong>
+                </div>
+              </div>
+
+              {/* Main Headline */}
+              <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight ${
+                isLight ? 'text-slate-900' : 'text-white'
+              }`}>
+                Rehabilitación Operativa: Teleférico de Mariche
+              </h2>
+
+              {/* Main Expanded Description */}
+              <p className={`text-sm sm:text-base lg:text-lg leading-relaxed font-normal ${
+                isLight ? 'text-slate-700' : 'text-slate-200'
+              }`}>
+                Más de <strong className={isLight ? 'text-amber-600 font-bold' : 'text-amber-400 font-bold'}>125.000 ciudadanos</strong> habitantes de La Dolorita y Filas de Mariche cuentan con la única vía terrestre conocida como carretera Petare-Fila de Mariche el cual es angosta y de curvas pronunciadas constante congestión de trafico vehicular que devora hasta 3 horas por trayecto.
+              </p>
+            </div>
+
+            {/* Quick Metrics Bar inside the amplified card */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className={`p-3.5 rounded-2xl border ${
+                isLight ? 'bg-amber-50/70 border-amber-200/80 text-slate-800' : 'bg-slate-950/50 border-amber-500/20 text-slate-200'
+              }`}>
+                <div className="text-[10px] font-mono uppercase tracking-wider text-amber-500 font-bold">Población Afectada</div>
+                <div className="text-xl sm:text-2xl font-black font-mono text-amber-500 mt-0.5">125.000+</div>
+                <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Habitantes directos</div>
+              </div>
+
+              <div className={`p-3.5 rounded-2xl border ${
+                isLight ? 'bg-rose-50/70 border-rose-200/80 text-slate-800' : 'bg-slate-950/50 border-rose-500/20 text-slate-200'
+              }`}>
+                <div className="text-[10px] font-mono uppercase tracking-wider text-rose-500 font-bold">Colapso Terrestre</div>
+                <div className="text-xl sm:text-2xl font-black font-mono text-rose-500 mt-0.5">Hasta 3 hrs</div>
+                <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Por trayecto en carretera</div>
+              </div>
+
+              <div className={`p-3.5 rounded-2xl border ${
+                isLight ? 'bg-emerald-50/70 border-emerald-200/80 text-slate-800' : 'bg-slate-950/50 border-emerald-500/20 text-slate-200'
+              }`}>
+                <div className="text-[10px] font-mono uppercase tracking-wider text-emerald-500 font-bold">Solución por Cable</div>
+                <div className="text-xl sm:text-2xl font-black font-mono text-emerald-500 mt-0.5">17.5 min</div>
+                <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Conexión expresa aérea</div>
               </div>
             </div>
-            <h2 className={`text-xl font-extrabold ${isLight ? 'text-slate-900' : 'text-white'}`}>
-              Rehabilitación Operativa: Teleférico de Mariche
-            </h2>
-            <p className={`text-xs sm:text-sm leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Más de 125.000 ciudadanos habitantes de La Dolorita y Filas de Mariche cuentan con la única vía terrestre conocida como carretera Petare-Fila de Mariche el cual es angosta y de curvas pronunciadas constante congestión de trafico vehicular que devora hasta 3 horas por trayecto.
-            </p>
           </div>
-          <div className="md:col-span-4 h-32 w-full rounded-xl overflow-hidden border border-slate-200/20 shadow-inner relative">
-            <img 
-              src={maricheCablecar} 
-              alt="Metro Cable" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-2">
-              <span className="text-[10px] text-white font-mono font-bold uppercase tracking-wider">Metro Cable</span>
+
+          {/* Right Column / Large Amplified Image Showcase */}
+          <div className="lg:col-span-5 flex flex-col justify-center">
+            <div className="h-72 sm:h-80 lg:h-full min-h-[300px] w-full rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl relative group">
+              <img 
+                src={maricheCablecar} 
+                alt="Teleférico Palo Verde - Mariche" 
+                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex flex-col justify-end p-5">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-amber-500 text-slate-950 tracking-wider uppercase">
+                    INFRAESTRUCTURA CLAVE
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-slate-900/80 text-amber-400 border border-amber-400/30 backdrop-blur-md">
+                    LÍNEA EXPRESA 4.79 KM
+                  </span>
+                </div>
+                <h4 className="text-sm sm:text-base font-bold text-white leading-snug drop-shadow-md">
+                  Sistema Teleférico Palo Verde - Filas de Mariche
+                </h4>
+                <p className="text-xs text-slate-300 font-mono mt-0.5 drop-shadow">
+                  Estación Motriz & Trazado Aéreo Directo
+                </p>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
-      
+
+      {/* Social Impact Unified Section */}
+      <div className="space-y-4 pt-4">
+        {/* Header */}
+        <div className={`p-4 rounded-xl border flex flex-wrap items-center justify-between gap-3 backdrop-blur-xl transition-colors ${
+          isLight ? 'bg-white/80 border-slate-200 text-slate-900 shadow-sm' : 'bg-slate-900/50 border-slate-700/50 text-slate-100'
+        }`}>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/20 text-emerald-500 border border-emerald-500/30">
+                IMPACTO SOCIAL & SOSTENIBILIDAD
+              </span>
+              <span className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>125.000 Beneficiarios Directos</span>
+            </div>
+            <h2 className={`text-lg font-bold mt-1 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+              Transformación Socioeconómica y Garantía de Sostenibilidad a Largo Plazo
+            </h2>
+          </div>
+          <div className={`text-xs font-mono ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            ODS ONU: <strong className="text-emerald-500">Ciudades Sostenibles (ODS 11)</strong>
+          </div>
+        </div>
+
+        {/* Pillars Selector Bar */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+          {pillars.map((pillar) => {
+            const isSelected = selectedPillar === pillar.id;
+            const PIcon = pillar.icon;
+            return (
+              <button
+                key={pillar.id}
+                onClick={() => {
+                  playClickSound();
+                  setSelectedPillar(pillar.id);
+                }}
+                className={`p-3 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between gap-2 backdrop-blur-md ${
+                  isSelected
+                    ? isLight
+                      ? 'bg-amber-50/90 border-amber-500 shadow-md ring-1 ring-amber-500/40 text-slate-900'
+                      : 'bg-slate-800/80 border-amber-500/70 shadow-lg shadow-amber-500/10 ring-1 ring-amber-500/40 text-slate-100'
+                    : isLight
+                    ? 'bg-white/70 border-slate-200 hover:bg-white hover:border-slate-300 text-slate-800'
+                    : 'bg-slate-900/40 border-slate-700/50 hover:bg-slate-800/50 hover:border-slate-600 text-slate-200'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className={`p-1.5 rounded-lg ${
+                    isSelected 
+                      ? 'bg-amber-500/20 text-amber-500' 
+                      : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-800 text-slate-400'
+                  }`}>
+                    <PIcon className="w-4 h-4" />
+                  </div>
+                  <span className={`text-[10px] font-mono font-bold ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>0{pillar.id + 1}</span>
+                </div>
+                <div>
+                  <div className={`text-xs font-bold line-clamp-2 ${
+                    isSelected ? (isLight ? 'text-slate-950' : 'text-white') : (isLight ? 'text-slate-700' : 'text-slate-300')
+                  }`}>
+                    {pillar.title}
+                  </div>
+                  <div className="text-[11px] font-mono font-bold text-amber-500 mt-1">
+                    {pillar.metric}
+                  </div>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Selected Pillar Detailed Showcase */}
+        <div className={`p-6 rounded-2xl border grid grid-cols-1 lg:grid-cols-12 gap-6 items-center backdrop-blur-xl transition-colors ${
+          isLight ? 'bg-white/85 border-slate-200 shadow-md text-slate-900' : 'bg-slate-900/50 border-slate-700/50 text-slate-100'
+        }`}>
+          
+          {/* Left info */}
+          <div className="lg:col-span-8 space-y-4">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-amber-500/20 text-amber-500 border border-amber-500/30">
+                EJE ESTRATÉGICO 0{currentPillar.id + 1}
+              </span>
+              <span className={`text-xs font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Impacto Positivo Medible</span>
+            </div>
+
+            <h3 className={`text-2xl font-extrabold flex items-center gap-3 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+              <IconComp className="w-7 h-7 text-amber-500" />
+              <span>{currentPillar.title}</span>
+            </h3>
+
+            <p className={`text-sm leading-relaxed ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+              {currentPillar.description}
+            </p>
+
+            {/* Highlights checklist */}
+            <div className="space-y-2.5 pt-2">
+              <div className={`text-xs font-mono uppercase tracking-wider ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Beneficios Clave Implementados:</div>
+              {currentPillar.highlights?.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-2.5 text-xs">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                  <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right metric card */}
+          <div className={`lg:col-span-4 p-6 rounded-2xl border text-center space-y-3 ${
+            isLight 
+              ? 'bg-gradient-to-br from-amber-50/80 via-white to-amber-50/30 border-amber-200/90 shadow-sm' 
+              : 'bg-gradient-to-br from-slate-950/60 to-slate-900/60 border-amber-500/30'
+          }`}>
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-500 mx-auto flex items-center justify-center">
+              <IconComp className="w-6 h-6" />
+            </div>
+            <div className="text-3xl sm:text-4xl font-black text-amber-500 font-mono">
+              {currentPillar.metric}
+            </div>
+            <div className={`text-xs font-medium ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+              {currentPillar.metricLabel}
+            </div>
+            <div className={`pt-3 border-t text-[11px] font-mono ${
+              isLight ? 'border-slate-200 text-slate-500' : 'border-slate-800 text-slate-400'
+            }`}>
+              estudio de movilidad de la Población.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
       {/* Impact & Quality of Life Box */}
       <div className={`p-5 rounded-2xl border backdrop-blur-xl transition-colors ${
         isLight 
@@ -294,7 +488,7 @@ export function SlideRestoration() {
             }`}>
               <span className={`flex items-center gap-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
                 <Clock className="w-4 h-4 text-emerald-500" />
-                Tiempo de traslado garantizado:
+                Tiempo de traslado promedio:
               </span>
               <span className="font-mono font-bold text-emerald-500 text-sm">17.5 min (Punto a punto)</span>
             </div>
@@ -331,7 +525,7 @@ export function SlideRestoration() {
           </div>
 
           <div className={`p-3 rounded-xl border text-xs ${
-            isLight ? 'bg-emerald-100/60 border-emerald-200 text-emerald-900' : 'bg-emerald-950/30 border-emerald-900/50 text-emerald-200'
+            isLight ? 'bg-emerald-100/60 border-emerald-200 text-emerald-900' : 'bg-emerald-950/30 border-emerald-900/50 text-rose-200'
           }`}>
             <strong>Impacto cotidiano:</strong> Recuperación de más de 3.5 horas libres por día para familia, educación, descanso y emprendimiento comunitario.
           </div>
@@ -461,169 +655,6 @@ export function SlideRestoration() {
             <span>La restauración planificada por <strong className={isLight ? 'text-slate-900' : 'text-white'}>General Trade</strong> asegura disponibilidad continua.</span>
           </div>
           <span className="font-mono text-amber-500 font-bold">Retorno de Inversión Social Inmediato</span>
-        </div>
-
-      </div>
-
-      {/* Social Impact Unified Section */}
-      <div className="space-y-4 pt-6 border-t border-slate-700/30">
-        {/* Header */}
-        <div className={`p-4 rounded-xl border flex flex-wrap items-center justify-between gap-3 backdrop-blur-xl transition-colors ${
-          isLight ? 'bg-white/80 border-slate-200 text-slate-900 shadow-sm' : 'bg-slate-900/50 border-slate-700/50 text-slate-100'
-        }`}>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/20 text-emerald-500 border border-emerald-500/30">
-                IMPACTO SOCIAL & SOSTENIBILIDAD
-              </span>
-              <span className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>125.000 Beneficiarios Directos</span>
-            </div>
-            <h2 className={`text-lg font-bold mt-1 ${isLight ? 'text-slate-900' : 'text-white'}`}>
-              Transformación Socioeconómica y Garantía de Sostenibilidad a Largo Plazo
-            </h2>
-          </div>
-          <div className={`text-xs font-mono ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-            ODS ONU: <strong className="text-emerald-500">Ciudades Sostenibles (ODS 11)</strong>
-          </div>
-        </div>
-
-        {/* Pillars Selector Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
-          {pillars.map((pillar) => {
-            const isSelected = selectedPillar === pillar.id;
-            const PIcon = pillar.icon;
-            return (
-              <button
-                key={pillar.id}
-                onClick={() => {
-                  playClickSound();
-                  setSelectedPillar(pillar.id);
-                }}
-                className={`p-3 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between gap-2 backdrop-blur-md ${
-                  isSelected
-                    ? isLight
-                      ? 'bg-amber-50/90 border-amber-500 shadow-md ring-1 ring-amber-500/40 text-slate-900'
-                      : 'bg-slate-800/80 border-amber-500/70 shadow-lg shadow-amber-500/10 ring-1 ring-amber-500/40 text-slate-100'
-                    : isLight
-                    ? 'bg-white/70 border-slate-200 hover:bg-white hover:border-slate-300 text-slate-800'
-                    : 'bg-slate-900/40 border-slate-700/50 hover:bg-slate-800/50 hover:border-slate-600 text-slate-200'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <div className={`p-1.5 rounded-lg ${
-                    isSelected 
-                      ? 'bg-amber-500/20 text-amber-500' 
-                      : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-800 text-slate-400'
-                  }`}>
-                    <PIcon className="w-4 h-4" />
-                  </div>
-                  <span className={`text-[10px] font-mono font-bold ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>0{pillar.id + 1}</span>
-                </div>
-                <div>
-                  <div className={`text-xs font-bold line-clamp-2 ${
-                    isSelected ? (isLight ? 'text-slate-950' : 'text-white') : (isLight ? 'text-slate-700' : 'text-slate-300')
-                  }`}>
-                    {pillar.title}
-                  </div>
-                  <div className="text-[11px] font-mono font-bold text-amber-500 mt-1">
-                    {pillar.metric}
-                  </div>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Selected Pillar Detailed Showcase */}
-        <div className={`p-6 rounded-2xl border grid grid-cols-1 lg:grid-cols-12 gap-6 items-center backdrop-blur-xl transition-colors ${
-          isLight ? 'bg-white/85 border-slate-200 shadow-md text-slate-900' : 'bg-slate-900/50 border-slate-700/50 text-slate-100'
-        }`}>
-          
-          {/* Left info */}
-          <div className="lg:col-span-8 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-amber-500/20 text-amber-500 border border-amber-500/30">
-                EJE ESTRATÉGICO 0{currentPillar.id + 1}
-              </span>
-              <span className={`text-xs font-mono ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Impacto Positivo Medible</span>
-            </div>
-
-            <h3 className={`text-2xl font-extrabold flex items-center gap-3 ${isLight ? 'text-slate-900' : 'text-white'}`}>
-              <IconComp className="w-7 h-7 text-amber-500" />
-              <span>{currentPillar.title}</span>
-            </h3>
-
-            <p className={`text-sm leading-relaxed ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
-              {currentPillar.description}
-            </p>
-
-            {/* Highlights checklist */}
-            <div className="space-y-2.5 pt-2">
-              <div className={`text-xs font-mono uppercase tracking-wider ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Beneficios Clave Implementados:</div>
-              {currentPillar.highlights?.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                  <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right metric card */}
-          <div className={`lg:col-span-4 p-6 rounded-2xl border text-center space-y-3 ${
-            isLight 
-              ? 'bg-gradient-to-br from-amber-50/80 via-white to-amber-50/30 border-amber-200/90 shadow-sm' 
-              : 'bg-gradient-to-br from-slate-950/60 to-slate-900/60 border-amber-500/30'
-          }`}>
-            <div className="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-500 mx-auto flex items-center justify-center">
-              <IconComp className="w-6 h-6" />
-            </div>
-            <div className="text-3xl sm:text-4xl font-black text-amber-500 font-mono">
-              {currentPillar.metric}
-            </div>
-            <div className={`text-xs font-medium ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
-              {currentPillar.metricLabel}
-            </div>
-            <div className={`pt-3 border-t text-[11px] font-mono ${
-              isLight ? 'border-slate-200 text-slate-500' : 'border-slate-800 text-slate-400'
-            }`}>
-              estudio de movilidad de la Población.
-            </div>
-          </div>
-
-        </div>
-
-        {/* Community Quotation & Public-Private Integration */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          
-          <div className={`p-4 rounded-xl border flex items-start gap-3 ${
-            isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950/40 border-slate-800'
-          }`}>
-            <div className="p-2 rounded-lg bg-cyan-500/20 text-cyan-500 shrink-0">
-              <Users className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className={`text-xs font-bold uppercase tracking-wider font-mono ${isLight ? 'text-slate-900' : 'text-white'}`}>Voz de la Comunidad de Mariche</h4>
-              <p className={`text-xs mt-1 italic leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-                "El teleférico no es un lujo, es la diferencia entre llegar a tiempo al trabajo o perder el empleo, entre que nuestros hijos puedan estudiar una carrera en la universidad o quedarse aislados en la montaña."
-              </p>
-            </div>
-          </div>
-
-          <div className={`p-4 rounded-xl border flex items-start gap-3 ${
-            isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950/40 border-slate-800'
-          }`}>
-            <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-500 shrink-0">
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className={`text-xs font-bold uppercase tracking-wider font-mono ${isLight ? 'text-slate-900' : 'text-white'}`}>Gestión de General Trade</h4>
-              <p className={`text-xs mt-1 leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-                Ofrecemos esquemas técnico que aseguran que cada inversión en restauración se traduzca eficiencia operatividad de calidad.
-              </p>
-            </div>
-          </div>
-
         </div>
 
       </div>

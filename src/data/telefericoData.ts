@@ -14,12 +14,12 @@ export const SLIDES: SlideInfo[] = [
     durationSeconds: 30,
   },
   {
-    id: 'map3d',
+    id: 'restoration',
     number: 2,
-    title: 'Simulador 3D y Perfil de Línea',
-    subtitle: 'Topografía de 4.79 km, Estación, Torres y control de telemetría dinámica.',
-    category: 'engineering',
-    durationSeconds: 45,
+    title: 'Urgencia de la Restauración',
+    subtitle: 'Comparativa de movilidad: Petare Filas de Mariche - La Dolorita vs. Sistema de Cable',
+    category: 'mobility',
+    durationSeconds: 40,
   },
   {
     id: 'components',
@@ -30,16 +30,8 @@ export const SLIDES: SlideInfo[] = [
     durationSeconds: 50,
   },
   {
-    id: 'restoration',
-    number: 4,
-    title: 'Urgencia de la Restauración',
-    subtitle: 'Comparativa de movilidad: Petare Filas de Mariche - La Dolorita vs. Sistema de Cable',
-    category: 'mobility',
-    durationSeconds: 40,
-  },
-  {
     id: 'general-trade',
-    number: 5,
+    number: 4,
     title: 'General Trade: Soluciones Integrales',
     subtitle: 'Inspecciones NDT, mantenimiento mayor, suministros y gestión de activos',
     category: 'services',
@@ -47,11 +39,19 @@ export const SLIDES: SlideInfo[] = [
   },
   {
     id: 'gallery',
-    number: 6,
+    number: 5,
     title: 'Galería Histórica & Operativa',
     subtitle: 'Archivo visual de obras, ingeniería aplicada y memoria de la comunidad',
     category: 'media',
     durationSeconds: 35,
+  },
+  {
+    id: 'map3d',
+    number: 6,
+    title: 'Simulador 3D y Perfil de Línea',
+    subtitle: 'Topografía de 4.79 km, Estación, Torres y control de telemetría dinámica.',
+    category: 'engineering',
+    durationSeconds: 45,
   },
 ];
 

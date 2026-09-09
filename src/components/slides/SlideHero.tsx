@@ -95,7 +95,7 @@ export function SlideHero({ onStartPresentation }: SlideHeroProps) {
           }`}>
             <div className="flex items-center gap-2 text-xs font-mono mb-1 text-white">
               <Users className="w-4 h-4 text-red-300" />
-              <span>BENEFICIARIOS</span>
+              <span>TRASLADO DIARIO DE USUARIOS</span>
             </div>
             <div className="text-2xl sm:text-3xl font-bold font-mono text-white">125,000+</div>
             <div className="text-[11px] mt-1 text-white">La Dolorita y Filas de Mariche</div>

@@ -65,62 +65,132 @@ export function SlideHero({ onStartPresentation }: SlideHeroProps) {
 
         {/* Key System Metrics Grid */}
         <div className={`grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 pt-6 border-t ${
-          isLight ? 'border-slate-200' : 'border-slate-800/80'
+          isLight ? 'border-slate-200/90' : 'border-slate-800/80'
         }`}>
           
-          <div className={`p-4 rounded-xl border backdrop-blur-sm ${
-            isLight ? 'bg-slate-100/90 border-slate-200' : 'bg-slate-800/50 border-slate-700/60'
+          {/* 1. TIEMPO DE VIAJE */}
+          <div className={`p-4 rounded-xl border backdrop-blur-md transition-all ${
+            isLight 
+              ? 'bg-white/95 border-rose-200/90 shadow-sm shadow-rose-100/50 hover:border-rose-300' 
+              : 'bg-slate-800/60 border-slate-700/70 hover:border-rose-500/40'
           }`}>
-            <div className="flex items-center gap-2 text-xs font-mono mb-1 text-white">
-              <Clock className="w-4 h-4 text-red-300" />
-              <span>TIEMPO DE VIAJE</span>
+            <div className="flex items-center gap-2 text-xs font-mono mb-1">
+              <Clock className="w-4 h-4 text-rose-500 dark:text-rose-400" />
+              <span className={`font-bold tracking-wider ${isLight ? 'text-slate-800' : 'text-slate-200'}`}>
+                TIEMPO DE VIAJE
+              </span>
             </div>
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-white">17.5 min</div>
-            <div className="text-[11px] text-white font-semibold mt-1">Frente a 120-150 min por la Carretera Petare-Fila de Mariche</div>
+            <div className={`text-2xl sm:text-3xl font-extrabold font-mono ${
+              isLight ? 'text-rose-600' : 'text-rose-400'
+            }`}>
+              17.5 min
+            </div>
+            <div className={`text-[11px] font-medium mt-1 leading-snug ${
+              isLight ? 'text-slate-700' : 'text-slate-300'
+            }`}>
+              Frente a 120-150 min por la Carretera Petare-Fila de Mariche
+            </div>
           </div>
 
-          <div className={`p-4 rounded-xl border backdrop-blur-sm ${
-            isLight ? 'bg-slate-100/90 border-slate-200' : 'bg-slate-800/50 border-slate-700/60'
+          {/* 2. LONGITUD TRAZA */}
+          <div className={`p-4 rounded-xl border backdrop-blur-md transition-all ${
+            isLight 
+              ? 'bg-white/95 border-blue-200/90 shadow-sm shadow-blue-100/50 hover:border-blue-300' 
+              : 'bg-slate-800/60 border-slate-700/70 hover:border-blue-500/40'
           }`}>
-            <div className="flex items-center gap-2 text-xs font-mono mb-1 text-white">
-              <Mountain className="w-4 h-4 text-gray-400" />
-              <span>LONGITUD TRAZA</span>
+            <div className="flex items-center gap-2 text-xs font-mono mb-1">
+              <Mountain className="w-4 h-4 text-blue-500 dark:text-blue-400" />
+              <span className={`font-bold tracking-wider ${isLight ? 'text-slate-800' : 'text-slate-200'}`}>
+                LONGITUD TRAZA
+              </span>
             </div>
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-white">4.79 km</div>
-            <div className="text-[11px] mt-1 text-white">Desnivel vertical: +310 m</div>
+            <div className={`text-2xl sm:text-3xl font-extrabold font-mono ${
+              isLight ? 'text-blue-700' : 'text-blue-400'
+            }`}>
+              4.79 km
+            </div>
+            <div className={`text-[11px] font-medium mt-1 ${
+              isLight ? 'text-slate-700' : 'text-slate-300'
+            }`}>
+              Desnivel vertical: +310 m
+            </div>
           </div>
 
-          <div className={`p-4 rounded-xl border backdrop-blur-sm ${
-            isLight ? 'bg-slate-100/90 border-slate-200' : 'bg-slate-800/50 border-slate-700/60'
+          {/* 3. TRASLADO DIARIO DE USUARIOS */}
+          <div className={`p-4 rounded-xl border backdrop-blur-md transition-all ${
+            isLight 
+              ? 'bg-white/95 border-amber-200/90 shadow-sm shadow-amber-100/50 hover:border-amber-300' 
+              : 'bg-slate-800/60 border-slate-700/70 hover:border-amber-500/40'
           }`}>
-            <div className="flex items-center gap-2 text-xs font-mono mb-1 text-white">
-              <Users className="w-4 h-4 text-red-300" />
-              <span>TRASLADO DIARIO DE USUARIOS</span>
+            <div className="flex items-center gap-2 text-xs font-mono mb-1">
+              <Users className="w-4 h-4 text-amber-500 dark:text-amber-400" />
+              <span className={`font-bold tracking-wider ${isLight ? 'text-slate-800' : 'text-slate-200'}`}>
+                TRASLADO DIARIO DE USUARIOS
+              </span>
             </div>
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-white">125,000+</div>
-            <div className="text-[11px] mt-1 text-white">La Dolorita y Filas de Mariche</div>
+            <div className={`text-2xl sm:text-3xl font-extrabold font-mono ${
+              isLight ? 'text-amber-600' : 'text-amber-400'
+            }`}>
+              35,000+
+            </div>
+            <div className={`text-[11px] font-semibold mt-1 ${
+              isLight ? 'text-slate-800' : 'text-slate-200'
+            }`}>
+              La Dolorita y Filas de Mariche
+            </div>
+            <div className={`text-[10px] sm:text-[11px] mt-0.5 ${
+              isLight ? 'text-slate-600 font-medium' : 'text-slate-400'
+            }`}>
+              De una Población de 125.000+ Habitantes
+            </div>
           </div>
 
-          <div className={`p-4 rounded-xl border backdrop-blur-sm ${
-            isLight ? 'bg-slate-100/90 border-slate-200' : 'bg-slate-800/50 border-slate-700/60'
+          {/* 4. CAPACIDAD MÁX */}
+          <div className={`p-4 rounded-xl border backdrop-blur-md transition-all ${
+            isLight 
+              ? 'bg-white/95 border-emerald-200/90 shadow-sm shadow-emerald-100/50 hover:border-emerald-300' 
+              : 'bg-slate-800/60 border-slate-700/70 hover:border-emerald-500/40'
           }`}>
-            <div className="flex items-center gap-2 text-xs font-mono mb-1 text-white">
-              <Zap className="w-4 h-4 text-emerald-400" />
-              <span>CAPACIDAD MÁX</span>
+            <div className="flex items-center gap-2 text-xs font-mono mb-1">
+              <Zap className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+              <span className={`font-bold tracking-wider ${isLight ? 'text-slate-800' : 'text-slate-200'}`}>
+                CAPACIDAD MÁX
+              </span>
             </div>
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-white">3,000</div>
-            <div className="text-[11px] text-white font-semibold mt-1">Pasajeros / hora / sentido</div>
+            <div className={`text-2xl sm:text-3xl font-extrabold font-mono ${
+              isLight ? 'text-emerald-700' : 'text-emerald-400'
+            }`}>
+              3,000
+            </div>
+            <div className={`text-[11px] font-medium mt-1 ${
+              isLight ? 'text-slate-700' : 'text-slate-300'
+            }`}>
+              Pasajeros / hora / sentido
+            </div>
           </div>
 
-          <div className={`p-4 rounded-xl border backdrop-blur-sm ${
-            isLight ? 'bg-slate-100/90 border-slate-200' : 'bg-slate-800/50 border-slate-700/60'
+          {/* 5. TORRES DE ACERO */}
+          <div className={`p-4 rounded-xl border backdrop-blur-md transition-all ${
+            isLight 
+              ? 'bg-white/95 border-indigo-200/90 shadow-sm shadow-indigo-100/50 hover:border-indigo-300' 
+              : 'bg-slate-800/60 border-slate-700/70 hover:border-indigo-500/40'
           }`}>
-            <div className="flex items-center gap-2 text-xs font-mono mb-1 text-white">
-              <Building2 className="w-4 h-4 text-blue-400" />
-              <span>TORRES DE ACERO</span>
+            <div className="flex items-center gap-2 text-xs font-mono mb-1">
+              <Building2 className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
+              <span className={`font-bold tracking-wider ${isLight ? 'text-slate-800' : 'text-slate-200'}`}>
+                TORRES DE ACERO
+              </span>
             </div>
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-white">32</div>
-            <div className="text-[11px] text-white font-semibold mt-1">pilonas (hasta 38m altura)</div>
+            <div className={`text-2xl sm:text-3xl font-extrabold font-mono ${
+              isLight ? 'text-indigo-700' : 'text-indigo-400'
+            }`}>
+              32
+            </div>
+            <div className={`text-[11px] font-medium mt-1 ${
+              isLight ? 'text-slate-700' : 'text-slate-300'
+            }`}>
+              pilonas (hasta 38m altura)
+            </div>
           </div>
 
         </div>

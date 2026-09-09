@@ -17,7 +17,7 @@ export function PresenterNotes({ slide, onClose }: PresenterNotesProps) {
           cues: [
             'Enfatizar que es uno de los teleféricos monocables urbanos más largos de Sudamérica (4.79 km).',
             'Contrastar el tiempo: 17.5 minutos en cable frente a más de 2.5 horas por la colapsada vía Petare Filas de Mariche - La Dolorita.',
-            'Destacar la capacidad instalada para movilizar 3,000 PPHPD y beneficiar a 125,000 personas.',
+            'Destacar la capacidad instalada para movilizar 3,000 PPHPD y trasladar a más de 35,000 usuarios diarios.',
           ],
           qna: '¿Por qué General Trade? Porque integra diagnóstico NDT, overhaul electromecánico y procura directa sin intermediarios.',
         };

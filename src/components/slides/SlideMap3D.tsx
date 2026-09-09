@@ -596,22 +596,7 @@ export function SlideMap3D() {
                 <Layers className="w-3.5 h-3.5 text-purple-300" />
                 Cabinas en línea
               </span>
-              <div className="flex items-center gap-1">
-                <input
-                  type="number"
-                  min="4"
-                  max="144"
-                  value={numCabins}
-                  onChange={(e) => {
-                    const val = parseInt(e.target.value);
-                    if (!isNaN(val)) {
-                      setNumCabins(Math.max(4, Math.min(144, val)));
-                    }
-                  }}
-                  className="w-10 text-right font-bold text-purple-300 bg-transparent border-b border-purple-300/30 focus:outline-none focus:border-purple-300 transition-colors"
-                />
-                <span className="font-bold text-purple-300 text-[10px]">Unid.</span>
-              </div>
+              <span className="font-bold text-purple-300">{numCabins} Unid.</span>
             </div>
             <input
               type="range"

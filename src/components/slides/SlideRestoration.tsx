@@ -133,12 +133,12 @@ export function SlideRestoration() {
           <div className="md:col-span-4 h-32 w-full rounded-xl overflow-hidden border border-slate-200/20 shadow-inner relative">
             <img 
               src={maricheCablecar} 
-              alt="Metrocable Mariche" 
+              alt="Metro Cable" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-2">
-              <span className="text-[10px] text-white font-mono font-bold uppercase tracking-wider">Metrocable Mariche</span>
+              <span className="text-[10px] text-white font-mono font-bold uppercase tracking-wider">Metro Cable</span>
             </div>
           </div>
         </div>

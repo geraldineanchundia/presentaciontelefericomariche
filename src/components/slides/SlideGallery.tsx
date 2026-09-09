@@ -132,9 +132,6 @@ export function SlideGallery() {
               
               {/* Year & Category tags on top of image */}
               <div className="absolute top-3 left-3 flex items-center gap-2">
-                <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-slate-950/80 backdrop-blur-md text-amber-400 border border-slate-700">
-                  {photo.year}
-                </span>
                 <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-slate-950/80 backdrop-blur-md text-slate-200 border border-slate-700">
                   {photo.category}
                 </span>
@@ -205,7 +202,6 @@ export function SlideGallery() {
                 <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-500/20 text-amber-500 border border-amber-500/30">
                   {activePhoto.category}
                 </span>
-                <span className={`text-xs font-mono ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Año de Registro: {activePhoto.year}</span>
               </div>
               <button
                 onClick={() => setActivePhoto(null)}

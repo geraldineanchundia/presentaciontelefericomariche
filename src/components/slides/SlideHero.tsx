@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, Shield, Wrench, Zap, Clock, Users, Mountain, Building2 } from 'lucide-react';
 import { playClickSound } from '../../utils/audio';
 import { useTheme } from '../../context/ThemeContext';
+import maricheCablecar from '../../assets/images/mariche_cablecar_1788659996661.jpg';
 
 interface SlideHeroProps {
   onStartPresentation: () => void;
@@ -19,7 +20,7 @@ export function SlideHero({ onStartPresentation }: SlideHeroProps) {
       {/* Background with Generated Cable Car Hero Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/mariche_cablecar_1788659996661.jpg"
+          src={maricheCablecar}
           alt="Teleférico Palo Verde - Mariche en operación"
           referrerPolicy="no-referrer"
           className={`w-full h-full object-cover object-center filter saturate-150 transform scale-105 transition-all duration-10000 hover:scale-100 ${

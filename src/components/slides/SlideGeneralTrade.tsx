@@ -15,6 +15,7 @@ import { GENERAL_TRADE_PILLARS } from '../../data/telefericoData';
 import { GeneralTradePillar } from '../../types';
 import { playClickSound } from '../../utils/audio';
 import { useTheme } from '../../context/ThemeContext';
+import technicalInspection from '../../assets/images/technical_inspection_1788660021437.jpg';
 
 interface SlideGeneralTradeProps {}
 
@@ -68,7 +69,7 @@ export function SlideGeneralTrade({}: SlideGeneralTradeProps) {
 
           <div className="md:col-span-4 h-56 w-full rounded-2xl overflow-hidden border border-slate-200/20 shadow-md relative group">
             <img 
-              src="/src/assets/images/technical_inspection_1788660021437.jpg" 
+              src={technicalInspection} 
               alt="Ingeniería General Trade" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               referrerPolicy="no-referrer"

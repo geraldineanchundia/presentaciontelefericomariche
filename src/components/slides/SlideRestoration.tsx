@@ -24,6 +24,9 @@ import {
 } from 'lucide-react';
 import { playClickSound } from '../../utils/audio';
 import { useTheme } from '../../context/ThemeContext';
+import maricheCablecar from '../../assets/images/mariche_cablecar_1788659996661.jpg';
+import cityBusTraffic from '../../assets/images/city_bus_traffic_1788940376030.jpg';
+import maricheCablecarRedCabins from '../../assets/images/mariche_cablecar_red_cabins_1788715437510.jpg';
 
 export function SlideRestoration() {
   const { isLight } = useTheme();
@@ -129,7 +132,7 @@ export function SlideRestoration() {
           </div>
           <div className="md:col-span-4 h-32 w-full rounded-xl overflow-hidden border border-slate-200/20 shadow-inner relative">
             <img 
-              src="/src/assets/images/mariche_cablecar_1788659996661.jpg" 
+              src={maricheCablecar} 
               alt="Metrocable Mariche" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -175,7 +178,7 @@ export function SlideRestoration() {
           
           <div className="h-32 w-full rounded-xl overflow-hidden border border-rose-500/10 relative">
             <img 
-              src="/src/assets/images/city_bus_traffic_1788940376030.jpg" 
+              src={cityBusTraffic} 
               alt="Colapso vial autobús en cola" 
               className="w-full h-full object-cover grayscale opacity-85"
               referrerPolicy="no-referrer"
@@ -259,7 +262,7 @@ export function SlideRestoration() {
           
           <div className="h-32 w-full rounded-xl overflow-hidden border border-emerald-500/10 relative">
             <img 
-              src="/src/assets/images/mariche_cablecar_red_cabins_1788715437510.jpg" 
+              src={maricheCablecarRedCabins} 
               alt="Sistema Teleférico Sostenible" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

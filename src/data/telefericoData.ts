@@ -1,4 +1,8 @@
 import { SlideInfo, TelefericoComponent, TowerInfo, HistoricalPhoto, CameraFeed, GeneralTradePillar } from '../types';
+import maricheCablecar from '../assets/images/mariche_cablecar_1788659996661.jpg';
+import driveMachinery from '../assets/images/drive_machinery_1788660008557.jpg';
+import technicalInspection from '../assets/images/technical_inspection_1788660021437.jpg';
+import socialImpact from '../assets/images/social_impact_1788660034107.jpg';
 
 export const SLIDES: SlideInfo[] = [
   {
@@ -286,7 +290,7 @@ export const HISTORICAL_PHOTOS: HistoricalPhoto[] = [
     title: 'Traza Panorámica Metrocable de Mariche',
     year: '2012 - Inauguración',
     category: 'Construcción',
-    imageUrl: '/src/assets/images/mariche_cablecar_1788659996661.jpg',
+    imageUrl: maricheCablecar,
     description: 'Vista panorámica del tendido de torres y cablevía orografía Metrocable Mariche.',
     technicalHighlight: 'Vano máximo libre de 620 metros entre torres P08 y P09 sin soportes intermedios.',
     impactScore: 'Reducción inmediata de 120 min de tráfico a 17.5 min',
@@ -296,7 +300,7 @@ export const HISTORICAL_PHOTOS: HistoricalPhoto[] = [
     title: 'Sala de Máquinas',
     year: '2015 - Operación Plena',
     category: 'Ingeniería',
-    imageUrl: '/src/assets/images/drive_machinery_1788660008557.jpg',
+    imageUrl: driveMachinery,
     description: 'Corazón motriz de un sistema teleférico Vista de los motores trifásicos reductor que emite el torque del volante, frenos de zapata.',
     technicalHighlight: 'Torque de salida',
     impactScore: 'Capacidad de transporte de 3,000 pasajeros por hora',
@@ -306,7 +310,7 @@ export const HISTORICAL_PHOTOS: HistoricalPhoto[] = [
     title: 'Prueba Magneto Inductiva del Cable tractor',
     year: '2023 - Maniobras Técnicas',
     category: 'Operación',
-    imageUrl: '/src/assets/images/technical_inspection_1788660021437.jpg',
+    imageUrl: technicalInspection,
     description: 'Especialistas de mantenimiento realizando prueba magneto inductiva   (MRT) y verificación del carro tensor y pilonas.',
     technicalHighlight: 'Detección temprana de pérdida de sección metálica.',
     impactScore: 'Garantía de integridad estructural y seguridad de vida',
@@ -316,7 +320,7 @@ export const HISTORICAL_PHOTOS: HistoricalPhoto[] = [
     title: 'Operatividad Comercial',
     year: '2020 - Movilidad Social',
     category: 'Comunidad',
-    imageUrl: '/src/assets/images/social_impact_1788660034107.jpg',
+    imageUrl: socialImpact,
     description: 'El objetivo es la rehabilitacion Operativa para que Usuarios, estudiantes y trabajadores se trasladen de manera ordenada conectando directamente con el sistema Metro de Caracas.',
     technicalHighlight: 'Andenes con sincronización continua a velocidad lenta de embarque (0.3 m/s).',
     impactScore: 'Más de 125,000 habitantes reconectados con un servicios de trasporte urbano por cable.',
